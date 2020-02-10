@@ -3,8 +3,10 @@ using RestSharp;
 
 namespace BusBoard
 {
-    public class StopId
+    public class BusStop
     {
+        
+        
         public string StopChooser()
         {
            Console.WriteLine("Please enter the stop ID:");
@@ -13,9 +15,7 @@ namespace BusBoard
            return stopId;
         }
         
-        public void StopFormatter()
-        {
-        }
+      
         
     }
 }

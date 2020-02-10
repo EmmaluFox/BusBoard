@@ -6,27 +6,38 @@ namespace BusBoard
 {
     public class Arrivals
     {
-        public Arrivals(string route, string destination, DateTime expected)
-        {
-            Route = route;
-            Destination = destination;
-            Expected = expected;
-        }
+        public string LineName { get; set; }
+        public string DestinationName { get; set; }
+        public string StationName { get; set; }
+        public int TimeToStation { get; set; }
 
-        private string Route { get; }
-        private string Destination { get; }
-        private DateTime Expected { get; }
-
-        public void ArrivalsFormatter()
-        {
-        }
-        
-        public string ArrivalsBoard()
+        public void ArrivalsBoard()
         {
             StopPoint stopPoint = new StopPoint();
-            stopPoint.StopPointArrivals();
-            var arrivals = "";
-            return arrivals;
+            var arrivals = stopPoint.StopPointArrivals();
+            int limit = 1;
+            string busStop = "";
+            foreach (var arrival in arrivals)
+            {
+                busStop = arrival.StationName;
+            }
+            Console.WriteLine($@"{busStop} Arrivals:
+");
+            Console.WriteLine($@"      Due    Route    Destination");
+            
+            foreach (var arrival in arrivals)
+            {
+                var minutes = TimeToStation / 60;
+                var seconds = TimeToStation % 60;
+                if (limit < 5)
+                {
+                    Console.WriteLine($@"{limit}:     {minutes}:{seconds}    {LineName}    {DestinationName}");
+                    
+                    
+                    limit++;
+                }
+            }
+            
         }
 
     }

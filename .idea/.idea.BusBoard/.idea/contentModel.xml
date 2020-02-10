@@ -7,6 +7,7 @@
       <e p="bin" t="ExcludeRecursive" />
       <e p="BusBoard.csproj" t="IncludeRecursive" />
       <e p="BusBoard.sln" t="IncludeFlat" />
+      <e p="BusStop.cs" t="Include" />
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
           <e p="netcoreapp3.1" t="Include">
@@ -16,7 +17,6 @@
       </e>
       <e p="packages" t="ExcludeRecursive" />
       <e p="Program.cs" t="Include" />
-      <e p="StopID.cs" t="Include" />
       <e p="StopPoint.cs" t="Include" />
     </e>
     <e p="C:\Users\EmmFox\.Rider2019.3\system\extResources" t="IncludeRecursive" />
