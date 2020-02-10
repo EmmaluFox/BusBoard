@@ -9,6 +9,7 @@
       <e p="BusBoard.csproj" t="IncludeRecursive" />
       <e p="BusBoard.sln" t="IncludeFlat" />
       <e p="BusStop.cs" t="Include" />
+      <e p="ChooseMode.cs" t="Include" />
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
           <e p="netcoreapp3.1" t="Include">
@@ -17,6 +18,8 @@
         </e>
       </e>
       <e p="packages" t="ExcludeRecursive" />
+      <e p="PostCode.cs" t="Include" />
+      <e p="PostCodeList.cs" t="Include" />
       <e p="PrintArrivals.cs" t="Include" />
       <e p="Program.cs" t="Include" />
     </e>

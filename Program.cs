@@ -9,15 +9,12 @@ namespace BusBoard
     {
         static void Main(string[] args)
         {
-            string stopSearchUrl = BusStop.StopChooser();
+            ChooseMode.ChooseFindMode();
+            string stopSearchUrl = BusStop.FindByStopId();
             List<Arrivals> arrivals = new List<Arrivals>(ArrivalsList.ArrivalsFetcher(stopSearchUrl).OrderBy(stopPointArrival => stopPointArrival.TimeToStation)
                 .Take(5));
             PrintArrivals.ArrivalsPrinter(arrivals);
-            // string stopId = StopChooser.AskUserForStopCode();
-            // List<Arrivals> arrivals = ArrivalsFetcher.GetArrivalsForStop(stopId);
-            // BusBoard.PrintArrivals(arrivals)
-
-
+            
         }
 
      
