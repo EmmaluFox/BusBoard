@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using RestSharp;
+using System.Linq;
 
 namespace BusBoard
 {
@@ -11,32 +12,10 @@ namespace BusBoard
         public string StationName { get; set; }
         public int TimeToStation { get; set; }
 
-        public void ArrivalsBoard()
+        public void ArrivalsBoard(List<Arrivals> arrivals)
         {
-            StopPoint stopPoint = new StopPoint();
-            var arrivals = stopPoint.StopPointArrivals();
-            int limit = 1;
-            string busStop = "";
-            foreach (var arrival in arrivals)
-            {
-                busStop = arrival.StationName;
-            }
-            Console.WriteLine($@"{busStop} Arrivals:
-");
-            Console.WriteLine($@"      Due    Route    Destination");
+
             
-            foreach (var arrival in arrivals)
-            {
-                var minutes = TimeToStation / 60;
-                var seconds = TimeToStation % 60;
-                if (limit < 5)
-                {
-                    Console.WriteLine($@"{limit}:     {minutes}:{seconds}    {LineName}    {DestinationName}");
-                    
-                    
-                    limit++;
-                }
-            }
             
         }
 

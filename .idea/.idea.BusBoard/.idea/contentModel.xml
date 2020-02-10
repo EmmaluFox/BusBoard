@@ -4,6 +4,7 @@
     <e p="C:\Training\Email Extraction\BusBoard" t="IncludeRecursive">
       <e p=".gitignore" t="Include" />
       <e p="Arrivals.cs" t="Include" />
+      <e p="ArrivalsList.cs" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="BusBoard.csproj" t="IncludeRecursive" />
       <e p="BusBoard.sln" t="IncludeFlat" />
@@ -16,8 +17,8 @@
         </e>
       </e>
       <e p="packages" t="ExcludeRecursive" />
+      <e p="PrintArrivals.cs" t="Include" />
       <e p="Program.cs" t="Include" />
-      <e p="StopPoint.cs" t="Include" />
     </e>
     <e p="C:\Users\EmmFox\.Rider2019.3\system\extResources" t="IncludeRecursive" />
     <e p="C:\Users\EmmFox\.Rider2019.3\system\resharper-host\local\Transient\ReSharperHost\v193\SolutionCaches\_BusBoard.-1974061534.00" t="ExcludeRecursive" />
