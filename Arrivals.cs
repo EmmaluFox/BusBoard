@@ -19,7 +19,6 @@ namespace BusBoard
 
         public void ArrivalsFormatter()
         {
-            
         }
         
         public string ArrivalsBoard()
