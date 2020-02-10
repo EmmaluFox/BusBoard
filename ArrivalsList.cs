@@ -24,8 +24,16 @@ namespace BusBoard
             foreach (var arrival in arrivals)
             {
                 int minutes = arrival.TimeToStation / 60;
-                int seconds = arrival.TimeToStation % 60;
-                string arrivalEntry = string.Format(("{0,-0}:{1,-4}{2,-0} - {3,5}"), minutes, seconds, arrival.LineName, arrival.DestinationName);
+                string min;
+                if (minutes < 1)
+                {
+                    min = " min";
+                }
+                else
+                {
+                    min = " mins";
+                }
+                string arrivalEntry = string.Format(("{0,2}{1,-10}{2,-9}{3,-4}\n"), minutes, min, arrival.LineName, arrival.DestinationName);
                 arrivalsBoard += arrivalEntry;
             }
 

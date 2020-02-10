@@ -10,7 +10,7 @@ namespace BusBoard
             string busStop = BusStop.StopName(arrivals);
             Console.WriteLine($@"{busStop} Arrivals:
 ");
-            string header = string.Format(("{0,-0}{1,-4}{2,-9}{3,-4}"),"Due","","Route","Destination");
+            string header = string.Format(("{0,-0}{1,-9}{2,-9}{3,-4}"),"Due","","Route","Destination");
 
             Console.WriteLine(header);
             Console.WriteLine(ArrivalsList.ArrivalsBoard(arrivals));
