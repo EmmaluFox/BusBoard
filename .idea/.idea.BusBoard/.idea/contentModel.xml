@@ -3,6 +3,7 @@
   <component name="ContentModelStore">
     <e p="C:\Training\Email Extraction\BusBoard" t="IncludeRecursive">
       <e p=".gitignore" t="Include" />
+      <e p="Arrivals.cs" t="Include" />
       <e p="bin" t="ExcludeRecursive" />
       <e p="BusBoard.csproj" t="IncludeRecursive" />
       <e p="BusBoard.sln" t="IncludeFlat" />

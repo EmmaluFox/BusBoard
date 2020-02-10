@@ -7,8 +7,8 @@ namespace BusBoard
     {
         static void Main(string[] args)
         {
-            StopPoint stopPoint = new StopPoint();
-            stopPoint.StopPointArrivals();
+            Arrivals liveArrivals = new Arrivals();
+            liveArrivals.ArrivalsBoard();
             
 
         }
