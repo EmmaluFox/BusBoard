@@ -12,12 +12,5 @@ namespace BusBoard
         public string StationName { get; set; }
         public int TimeToStation { get; set; }
 
-        public void ArrivalsBoard(List<Arrivals> arrivals)
-        {
-
-            
-            
-        }
-
     }
 }
