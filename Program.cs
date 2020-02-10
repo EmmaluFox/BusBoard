@@ -1,4 +1,5 @@
 ﻿using System;
+using RestSharp;
 
 namespace BusBoard
 {
@@ -6,7 +7,12 @@ namespace BusBoard
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            StopPoint stopPoint = new StopPoint();
+            stopPoint.StopPointArrivals();
+            
+
         }
+
+     
     }
 }
