@@ -21,7 +21,6 @@
       </e>
       <e p="packages" t="ExcludeRecursive" />
       <e p="PostCode.cs" t="Include" />
-      <e p="PostCodeEntry.cs" t="Include" />
       <e p="PrintArrivals.cs" t="Include" />
       <e p="Program.cs" t="Include" />
     </e>

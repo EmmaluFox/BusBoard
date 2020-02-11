@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace BusBoard
 {
-    public static class ArrivalsList
+    public class ArrivalsList
     {
 
         public static List<Arrivals> ArrivalsFetcher(string stopSearchUrl)
@@ -18,7 +18,7 @@ namespace BusBoard
             return response.Data;
         }
 
-        public static string ArrivalsBoard(List<Arrivals> arrivals)
+        public string ArrivalsBoard(IEnumerable<Arrivals> arrivals)
         {
             string arrivalsBoard = "";
             foreach (var arrival in arrivals)
@@ -39,5 +39,6 @@ namespace BusBoard
 
             return arrivalsBoard;
         }
+        
     }
 }

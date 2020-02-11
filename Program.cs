@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -14,18 +15,28 @@ namespace BusBoard
         {
             BusBoardApp();
         }
-        static void BusBoardApp()
+
+        static void BusBoardApp(IEnumerable<Arrivals> arrivals)
         {
+            ArrivalsList arrivalsIn = new ArrivalsList();
+            
             WelcomeMessage();
             ModeChoice();  
+            PrintArrivals printArrivals = new PrintArrivals();
+            printArrivals.ArrivalsPrinter(arrivals);
         }
+
         static void ModeChoice()
         {
             int choice = ChooseMode.ChooseFindMode();
             if (choice == Option1)
             {
-                FindNearestStop findNearestStop = new FindNearestStop();
-                findNearestStop.StopFinder();
+                FindNearestStop fetchPostcode = new FindNearestStop();
+                string busUrl = fetchPostcode.FindByGeoLoc();
+                BusStopList fetchStopList = new BusStopList();
+                fetchStopList.BusStopFetcher(busUrl);
+                fetchStopList.BusStopsOrderByDistance();
+
             }
             else if (choice == Option2)
             {
