@@ -24,7 +24,8 @@ namespace BusBoard
             int choice = ChooseMode.ChooseFindMode();
             if (choice == Option1)
             {
-                BusStop.FindByPostCode();
+                string url = BusStop.FindByPostCode();
+                List<PostCode> postcode = new List<PostCode>(PostCodeList.PostCodeFetcher(url));
             }
             else if (choice == Option2)
             {

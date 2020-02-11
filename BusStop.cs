@@ -19,7 +19,7 @@ namespace BusBoard
         {
             Console.WriteLine("Please enter a PostCode:\n");
             string postCode = Console.ReadLine();
-            string url = $@"api.postcodes.io/postcodes/" +Strings.Trim(postCode);
+            string url = $@"api.postcodes.io/postcodes/{postCode}";
             return url;
         }
 
