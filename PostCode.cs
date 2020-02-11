@@ -10,7 +10,6 @@ namespace BusBoard
         public string AdminWard { get; set; }
         public decimal Longitude { get; set; }
         public decimal Latitude { get; set; }
-        
-        
+
     }
 }

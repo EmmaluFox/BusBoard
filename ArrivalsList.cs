@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace BusBoard
 {
-    public class ArrivalsList
+    public static class ArrivalsList
     {
 
         public static List<Arrivals> ArrivalsFetcher(string stopSearchUrl)

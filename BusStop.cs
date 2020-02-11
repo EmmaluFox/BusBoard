@@ -5,7 +5,7 @@ using RestSharp;
 
 namespace BusBoard
 {
-    public class BusStop
+    public static class BusStop
     {
         private static string _stopId = "";
         public static string FindByStopId()

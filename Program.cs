@@ -1,21 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using RestSharp;
 
 namespace BusBoard
 {
-    class Program
+    static class Program
     {
         private const int Option1 = 1;
         private const int Option2 = 2;
         static void Main(string[] args)
         {
+            BusBoardApp();
+        }
+        static void BusBoardApp()
+        {
+            WelcomeMessage();
+            ModeChoice();  
+        }
+        static void ModeChoice()
+        {
             int choice = ChooseMode.ChooseFindMode();
             if (choice == Option1)
             {
                 BusStop.FindByPostCode();
-            } else if (choice == Option2)
+            }
+            else if (choice == Option2)
             {
                 string stopSearchUrl = BusStop.FindByStopId();
                 List<Arrivals> arrivals = new List<Arrivals>(ArrivalsList.ArrivalsFetcher(stopSearchUrl)
@@ -23,8 +34,17 @@ namespace BusBoard
                     .Take(5));
                 PrintArrivals.ArrivalsPrinter(arrivals);
             }
+            else
+            {
+                BusBoardApp();
+            } 
         }
 
-     
+        static void WelcomeMessage()
+        {
+            Console.WriteLine("Welcome to BusBoard!\n");
+        }
+
+        
     }
 }
