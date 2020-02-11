@@ -11,6 +11,7 @@
       <e p="BusStop.cs" t="Include" />
       <e p="BusStopList.cs" t="Include" />
       <e p="ChooseMode.cs" t="Include" />
+      <e p="FindNearestStop.cs" t="Include" />
       <e p="obj" t="ExcludeRecursive">
         <e p="Debug" t="Include">
           <e p="netcoreapp3.1" t="Include">
