@@ -7,10 +7,11 @@ namespace BusBoard
         private const int Option1 = 1;
         private const int Option2 = 2;
 
-        public static void ChooseFindMode()
+        public static int ChooseFindMode()
         {
             Console.WriteLine("Find a bus stop by:\n1: PostCode\n2:TFL Stop ID\n");
             var choose = Console.ReadLine();
+            int choice = 0;
             if (choose != null)
             {
                 bool integer = int.TryParse(choose, out int option);
@@ -18,10 +19,10 @@ namespace BusBoard
                 {
                     if (option == Option1)
                     {
-                        BusStop.FindByPostCode();
+                        choice = Option1;
                     } else if (option == Option2)
                     {
-                        BusStop.FindByStopId();
+                        choice = Option2;
                     }
                 }
                 else
@@ -35,6 +36,8 @@ namespace BusBoard
                 Console.WriteLine("Sorry, I don't understand...\n");
                 ChooseFindMode();
             }
+
+            return choice;
         }
         
     }
