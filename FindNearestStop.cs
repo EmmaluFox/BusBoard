@@ -8,17 +8,27 @@ namespace BusBoard
 {
     public class FindNearestStop
     {
+        public string StopName;
+        public static decimal StopLat;
+        public static decimal StopLon;
+        
         public void StopFinder()
         {
-            string url = BusStopList.FindByPostCode();
-            PostCode postcodeFeatures = PostCodeList.PostCodeFetcher(url);
-    
-            string stopName = postcodeFeatures.AdminWard;
-            decimal stopLat = postcodeFeatures.Latitude;
-            decimal stopLon = postcodeFeatures.Longitude;
-            string busUrl = BusStopList.FindByGeoLoc();
-            List<BusStop> busStops = new List<BusStop>(BusStopList.BusStopFetcher(busUrl)
-                .OrderBy();
+            PostCode postcodeFeatures = PostCodeEntry.PostCodeFetcher();
+            StopName = postcodeFeatures.AdminWard;
+            StopLat = postcodeFeatures.Latitude;
+            StopLon = postcodeFeatures.Longitude;
+            Console.WriteLine(StopName);
+        }
+
+        public void StopIdFromPostCode()
+        {
+            BusStopList busStopList = new BusStopList();
+            List<BusStop> busStops = new List<BusStop>(busStopList.BusStopFetcher());
+            foreach (var busStop in busStops)
+            {
+                
+            }
         }
         
     }

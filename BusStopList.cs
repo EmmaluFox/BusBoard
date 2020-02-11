@@ -7,9 +7,10 @@ namespace BusBoard
 {
     public class BusStopList
     {
-        
-        public static List<BusStop> BusStopFetcher(string busUrl)
-        {   var client = new RestClient(busUrl);
+        public List<BusStop> BusStopFetcher()
+        {
+            string busUrl = FindByGeoLoc();
+            var client = new RestClient(busUrl);
             client.Timeout = -1;
             var request = new RestRequest(Method.GET);
             var response = client.Get<List<BusStop>>(request);
@@ -17,9 +18,9 @@ namespace BusBoard
         }
         public static string FindByGeoLoc()
         {
-            FindNearestStop findByGeo = new FindNearestStop();
-            findByGeo.StopFinder();
-            string busUrl = $@"https://api.tfl.gov.uk/Place?type=StopPoint&lat={latitude}&lon={-longitude}&radius=200&categories=all&app_id=0f9fc04c&app_key=4931529051075c3fc6489d889a0df590";
+            decimal latitude = FindNearestStop.StopLat;
+            decimal longitude = FindNearestStop.StopLon;
+            string busUrl = $@"https://api.tfl.gov.uk/Place?type=StopPoint&lat={latitude}&lon={longitude}&radius=200&categories=all&app_id=0f9fc04c&app_key=4931529051075c3fc6489d889a0df590";
             return busUrl;
         }
 

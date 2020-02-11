@@ -3,10 +3,11 @@ using RestSharp;
 
 namespace BusBoard
 {
-    public class PostCodeList
+    public class PostCodeEntry
     {
-        public static PostCode PostCodeFetcher(string url)
+        public static PostCode PostCodeFetcher()
         {
+            string url = BusStopList.FindByGeoLoc();
             var client = new RestClient(url);
             client.Timeout = -1;
             var request = new RestRequest(Method.GET);

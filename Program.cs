@@ -24,8 +24,8 @@ namespace BusBoard
             int choice = ChooseMode.ChooseFindMode();
             if (choice == Option1)
             {
-                
-                }
+                FindNearestStop findNearestStop = new FindNearestStop();
+                findNearestStop.StopFinder();
             }
             else if (choice == Option2)
             {
