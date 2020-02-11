@@ -24,12 +24,12 @@ namespace BusBoard
             int choice = ChooseMode.ChooseFindMode();
             if (choice == Option1)
             {
-                string url = BusStopFinder.FindByPostCode();
+                string url = BusStopList.FindByPostCode();
                 List<PostCode> postcode = new List<PostCode>(PostCodeList.PostCodeFetcher(url));
             }
             else if (choice == Option2)
             {
-                string stopSearchUrl = BusStopFinder.FindByStopId();
+                string stopSearchUrl = BusStopList.FindByStopId();
                 List<Arrivals> arrivals = new List<Arrivals>(ArrivalsList.ArrivalsFetcher(stopSearchUrl)
                     .OrderBy(stopPointArrival => stopPointArrival.TimeToStation)
                     .Take(5));
