@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using RestSharp;
-using System.Linq;
-
-namespace BusBoard
+﻿namespace BusBoard
 {
     public class Arrivals
     {
@@ -11,6 +6,5 @@ namespace BusBoard
         public string DestinationName { get; set; }
         public string StationName { get; set; }
         public int TimeToStation { get; set; }
-
     }
 }

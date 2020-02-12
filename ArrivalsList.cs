@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using RestSharp;
 
 namespace BusBoard
 {
     public class ArrivalsList
     {
-
         public static List<Arrivals> ArrivalsFetcher(string stopSearchUrl)
         {
             var client = new RestClient(stopSearchUrl);
@@ -18,25 +16,21 @@ namespace BusBoard
 
         public string ArrivalsBoard(List<Arrivals> arrivals)
         {
-            string arrivalsBoard = "";
+            var arrivalsBoard = "";
             foreach (var arrival in arrivals)
             {
-                int minutes = arrival.TimeToStation / 60;
+                var minutes = arrival.TimeToStation / 60;
                 string min;
                 if (minutes < 1)
-                {
                     min = " min";
-                }
                 else
-                {
                     min = " mins";
-                }
-                string arrivalEntry = string.Format(("{0,2}{1,-10}{2,-9}{3,-4}\n"), minutes, min, arrival.LineName, arrival.DestinationName);
+                var arrivalEntry = string.Format("{0,2}{1,-10}{2,-9}{3,-4}\n", minutes, min, arrival.LineName,
+                    arrival.DestinationName);
                 arrivalsBoard += arrivalEntry;
             }
 
             return arrivalsBoard;
         }
-        
     }
 }

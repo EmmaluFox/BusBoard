@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.VisualBasic;
-using RestSharp;
+﻿using System.Collections.Generic;
 
 namespace BusBoard
 {
@@ -12,7 +9,7 @@ namespace BusBoard
             Distance = distance;
         }
 
-        public string Id {get; set; }
+        public string Id { get; set; }
         public string Indicator { get; set; }
         public string CommonName { get; set; }
         public float Distance { get; set; }
@@ -24,5 +21,3 @@ namespace BusBoard
         public string CompassPoint { get; set; }
     }
 }
-
-
