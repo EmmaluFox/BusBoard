@@ -18,20 +18,20 @@ namespace BusBoard
 
         static void BusBoardApp()
         {
+            BusStopList busStopList = new BusStopList();
             WelcomeMessage();
-            ModeChoice();
+            ModeChoice(busStopList);
         }
 
-        static void ModeChoice()
+        static void ModeChoice(BusStopList busStopList)
         {
             int choice = ChooseMode.ChooseFindMode();
             if (choice == Option1)
             {
-                BusStopList fetchStopList = new BusStopList();
                 Console.WriteLine("Please enter a PostCode:\n");
                 FindNearestStop fetchPostcode = new FindNearestStop();
                 string busUrl = fetchPostcode.FindByGeoLoc();
-                
+                BusStopList fetchStopList = new BusStopList();
                 fetchStopList.BusStopFetcher(busUrl);
                 fetchStopList.BusStopsOrderByDistance();
 
@@ -44,8 +44,8 @@ namespace BusBoard
                 List<Arrivals> arrivals = new List<Arrivals>(ArrivalsList.ArrivalsFetcher(stopSearchUrl)
                     .OrderBy(stopPointArrival => stopPointArrival.TimeToStation)
                     .Take(5));
-                PrintArrivals printArrivals = new PrintArrivals();
-                printArrivals.ArrivalsPrinter(arrivals);
+                Printer printer = new Printer();
+                printer.ArrivalsPrinter(arrivals);
             }
             else
             {

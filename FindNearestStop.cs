@@ -34,13 +34,14 @@ namespace BusBoard
             return response.Data;
         }
 
-        public string Latitude()
+        private string Latitude()
         {
             LatFromPostCode = StopFinder().Latitude;
             string latitude = LatFromPostCode.ToString("N3");
             return latitude;
         }
-        public string Longitude()
+
+        private string Longitude()
         {
             LonFromPostCode = StopFinder().Longitude;
             string longitude = LonFromPostCode.ToString("N3");

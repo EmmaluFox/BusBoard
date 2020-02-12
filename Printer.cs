@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace BusBoard
 {
-    public class PrintArrivals
+    public class Printer
     {
         public void ArrivalsPrinter(List<Arrivals> arrivals)
             {
@@ -19,5 +19,10 @@ namespace BusBoard
                 Console.WriteLine(header);
                 Console.WriteLine(arrivalsList.ArrivalsBoard(arrivals));
             }
+
+        public void BusStopPrinter(List<BusStop> busStops)
+        {
+            
+        }
     }
 }
