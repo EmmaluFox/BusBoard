@@ -18,7 +18,7 @@ namespace BusBoard
             return response.Data;
         }
 
-        public string ArrivalsBoard(IEnumerable<Arrivals> arrivals)
+        public string ArrivalsBoard(List<Arrivals> arrivals)
         {
             string arrivalsBoard = "";
             foreach (var arrival in arrivals)

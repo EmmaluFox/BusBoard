@@ -16,14 +16,12 @@ namespace BusBoard
             BusBoardApp();
         }
 
-        static void BusBoardApp(IEnumerable<Arrivals> arrivals)
+        static void BusBoardApp()
         {
             ArrivalsList arrivalsIn = new ArrivalsList();
             
             WelcomeMessage();
-            ModeChoice();  
-            PrintArrivals printArrivals = new PrintArrivals();
-            printArrivals.ArrivalsPrinter(arrivals);
+            ModeChoice();
         }
 
         static void ModeChoice()
@@ -31,20 +29,25 @@ namespace BusBoard
             int choice = ChooseMode.ChooseFindMode();
             if (choice == Option1)
             {
+                BusStopList fetchStopList = new BusStopList();
+                Console.WriteLine("Please enter a PostCode:\n");
                 FindNearestStop fetchPostcode = new FindNearestStop();
                 string busUrl = fetchPostcode.FindByGeoLoc();
-                BusStopList fetchStopList = new BusStopList();
+                
                 fetchStopList.BusStopFetcher(busUrl);
                 fetchStopList.BusStopsOrderByDistance();
 
             }
-            else if (choice == Option2)
+            else if (choice == Option2) 
             {
-                string stopSearchUrl = BusStopList.FindByStopId();
+                Console.WriteLine("Please enter the stop ID:\n");
+                BusStopList findStopById = new BusStopList();
+                string stopSearchUrl = findStopById.FindByStopId();
                 List<Arrivals> arrivals = new List<Arrivals>(ArrivalsList.ArrivalsFetcher(stopSearchUrl)
                     .OrderBy(stopPointArrival => stopPointArrival.TimeToStation)
                     .Take(5));
-                PrintArrivals.ArrivalsPrinter(arrivals);
+                PrintArrivals printArrivals = new PrintArrivals();
+                printArrivals.ArrivalsPrinter(arrivals);
             }
             else
             {

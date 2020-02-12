@@ -19,7 +19,6 @@ namespace BusBoard
         }
         private string FindByPostCode() //Asks for PostCode, reads user input and returns custom URL for API
         {
-            Console.WriteLine("Please enter a PostCode:\n");
             string postCode = Console.ReadLine();
             string url = $@"http://api.postcodes.io/postcodes/{postCode}";
             return url;
