@@ -18,8 +18,6 @@ namespace BusBoard
 
         static void BusBoardApp()
         {
-            ArrivalsList arrivalsIn = new ArrivalsList();
-            
             WelcomeMessage();
             ModeChoice();
         }
@@ -59,7 +57,5 @@ namespace BusBoard
         {
             Console.WriteLine("Welcome to BusBoard!\n");
         }
-
-        
     }
 }
