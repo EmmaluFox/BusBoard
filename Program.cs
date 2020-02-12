@@ -29,10 +29,13 @@ namespace BusBoard
             {
                 Console.WriteLine("Please enter a PostCode:\n");
                 FindNearestStop fetchPostcode = new FindNearestStop();
-                string busUrl = fetchPostcode.FindByGeoLoc();
-                BusStopList fetchStopList = new BusStopList();
-                fetchStopList.BusStopFetcher(busUrl);
-                fetchStopList.BusStopsOrderByDistance();
+                string postCodeUrl = fetchPostcode.FindByPostCode();
+                PostCode postCode = new PostCode("",0,0);
+                
+                BusStopList busStopList = new BusStopList();
+                
+                string busStopUrl = fetchPostcode.FindByGeoLoc(postCode);
+                busStopList.BusStopFetcher(busStopUrl);
 
             }
             else if (choice == Option2) 

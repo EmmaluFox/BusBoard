@@ -8,8 +8,16 @@ namespace BusBoard
     public class PostCode
     {
         public string AdminWard { get; set; }
-        public decimal Longitude { get; set; }
-        public decimal Latitude { get; set; }
+        public float Longitude { get; set; }
+        public float Latitude { get; set; }
+        public PostCode(string adminWard, float latitude, float longitude)
+        {
+            AdminWard = adminWard;
+            Latitude = latitude;
+            Longitude = longitude;
+        }
+
+        
 
     }
 }
