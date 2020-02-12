@@ -15,9 +15,7 @@ namespace BusBoard
             return url;
         }
 
-        public PostCode
-            PostCodeFetcher(string postCodeUrl,
-                PostCode postCode) //Gets PostCode area name, latitude and longitude from PostCode.io API
+        public PostCode PostCodeFetcher(string postCodeUrl, PostCode postCode) //Gets PostCode area name, latitude and longitude from PostCode.io API
         {
             var client = new RestClient(postCodeUrl) {Timeout = -1};
             var request = new RestRequest(Method.GET);
@@ -25,6 +23,7 @@ namespace BusBoard
             postCode = response.Data;
             return postCode;
         }
+        
 
         private string Latitude(PostCode postCode)
         {
