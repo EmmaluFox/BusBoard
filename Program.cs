@@ -18,12 +18,11 @@ namespace BusBoard
 
         static void BusBoardApp()
         {
-            BusStopList busStopList = new BusStopList();
             WelcomeMessage();
-            ModeChoice(busStopList);
+            ModeChoice();
         }
 
-        static void ModeChoice(BusStopList busStopList)
+        static void ModeChoice()
         {
             int choice = ChooseMode.ChooseFindMode();
             if (choice == Option1)
